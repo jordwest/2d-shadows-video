@@ -1,9 +1,18 @@
 <html>
 	<head>
 		<title>2D Shadows</title>
+    <style>
+      #canvas, #overlay {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+      }
+    </style>
 	</head>
 	<body>
 		<canvas id="canvas" width="800" height="800" style="background-color: blue">
+		</canvas>
+		<canvas id="overlay" width="800" height="800" style="background-color: transparent">
 		</canvas>
 		<script src="./main.ts"></script>
 	</body>

@@ -5,7 +5,7 @@ export function calculateGeometry(inputs: {
   a: Vec2;
   b: Vec2;
   lightRadius: number;
-}): Float32Array {
+}): number[] {
   const wa = subtract(inputs.a, inputs.light);
   const sa = multiply(unitVector(wa), inputs.lightRadius);
   const ea = add(inputs.light, sa);
@@ -14,7 +14,7 @@ export function calculateGeometry(inputs: {
   const sb = multiply(unitVector(wb), inputs.lightRadius);
   const eb = add(inputs.light, sb);
 
-  return new Float32Array([
+  return [
     //// Triangle 1 ////
     // Vert 1
     inputs.a.x,
@@ -40,5 +40,5 @@ export function calculateGeometry(inputs: {
     // Vert 3
     inputs.b.x,
     inputs.b.y,
-  ]);
+  ];
 }
